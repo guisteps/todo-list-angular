@@ -10,7 +10,7 @@ import { IconsModule } from '../../icons/icons.module';
   imports: [
     CommonModule,
     FormsModule,
-    //IconsModule
+    IconsModule
   ]
 })
 export class TodoListModule { }

@@ -12,18 +12,22 @@
     </div>
 
     <br />
-    
-    <div class="flex justify-start px-8">
+    <div class="flex justify-center px-8 mt-8">
+        <h4 *ngIf="listTodo.length == 0" class="text-gray-400 text-4xl tracking-wide">Adicione Tarefas</h4>
+    </div>
+
+    <div class="flex justify-start px-8" *ngIf="listTodo.length > 0">
         <ul class="w-7/12">
             <li *ngFor="let t of listTodo; let i = index"
                 class="w-full p-4 border-b-2 border-neutral-100 border-opacity-100">
                 <div class="flex justify-between">
                     <span>{{t}}</span>
-                    <button (click)="remove(i)">
-                       <!-- <i-feather name="trash-2"></i-feather>-->
+                    <button (click)="remove(i)" title="Remover">
+                        <i-feather class="text-red-500 hover:text-red-700" name="trash-2"></i-feather>
                     </button>
                 </div>
             </li>
         </ul>
     </div>
+
 </div>
