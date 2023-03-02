@@ -1,0 +1,29 @@
+<div class="w-screen flex flex-col">
+    <div class="flex justify-start px-8 py-4">
+        <h2 class="underline tracking-wide text-lg font-bold">Steps Todo</h2>
+    </div>
+
+    <div class="flex justify-center grid grid-cols-2 gap-4 px-8">
+        <input type="text" [(ngModel)]="todo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm p-2 w-full"
+            placeholder="Adicionar novo..." (keyup.enter)="add()" />
+
+        <button class="bg-blue-500 text-white font-bold py-2 px-2 rounded hover:bg-blue-700 disabled:bg-gray-300 w-16"
+            (click)="add()" [disabled]="!todo">+</button>
+    </div>
+
+    <br />
+    
+    <div class="flex justify-start px-8">
+        <ul class="w-7/12">
+            <li *ngFor="let t of listTodo; let i = index"
+                class="w-full p-4 border-b-2 border-neutral-100 border-opacity-100">
+                <div class="flex justify-between">
+                    <span>{{t}}</span>
+                    <button (click)="remove(i)">
+                       <!-- <i-feather name="trash-2"></i-feather>-->
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
